@@ -5,21 +5,23 @@ import type { Product } from "@/types/product";
 
 export function ProductCard({ product }: { product: Product }) {
   return (
-    <Link href={`/shop/${product.slug}`} className="group block">
+    <Link href={`/shop/${product.slug}`} className="group block min-w-0">
       <div className="relative aspect-[3/4] overflow-hidden bg-stone-200">
         {product.image ? (
           <Image
             src={product.image}
-          alt={product.name}
+            alt={product.name}
             fill
-            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 50vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         ) : null}
       </div>
-      <div className="mt-3 flex items-baseline justify-between gap-3">
-        <h3 className="text-sm text-stone-900">{product.name}</h3>
-        <p className="text-sm text-stone-700">{formatPrice(product.price)}</p>
+      <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-3">
+        <h3 className="text-sm leading-5 text-stone-900">{product.name}</h3>
+        <p className="shrink-0 text-sm text-stone-700">
+          {formatPrice(product.price)}
+        </p>
       </div>
     </Link>
   );

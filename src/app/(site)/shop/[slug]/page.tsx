@@ -31,7 +31,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
     .slice(0, 4);
 
   return (
-    <main className="mx-auto w-full max-w-6xl px-6 py-14">
+    <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6 sm:py-14">
       <Link href="/shop" className="text-sm text-stone-500 hover:text-stone-900">
         ← Back to shop
       </Link>
@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           ) : null}
         </div>
         <div>
-          <h1 className="text-4xl text-stone-900">{product.name}</h1>
+          <h1 className="text-3xl text-stone-900 sm:text-4xl">{product.name}</h1>
           <p className="mt-4 text-xl text-stone-800">{formatPrice(product.price)}</p>
           <p className="mt-6 max-w-md leading-7 text-stone-600">
             {product.description}
@@ -99,7 +99,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
       {related.length > 0 && (
         <section className="mt-20">
           <h2 className="text-2xl text-stone-900">You may also like</h2>
-          <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-8 grid grid-cols-2 gap-4 sm:gap-8 lg:grid-cols-4">
             {related.map((item) => (
               <ProductCard key={item.id} product={item} />
             ))}

@@ -6,7 +6,7 @@ import type { CmsPage } from "@/types/page";
 const components: PortableTextComponents = {
   block: {
     h2: ({ children }) => (
-      <h2 className="mt-10 text-2xl text-stone-900">{children}</h2>
+      <h2 className="mt-8 text-xl text-stone-900 sm:mt-10 sm:text-2xl">{children}</h2>
     ),
     h3: ({ children }) => (
       <h3 className="mt-8 text-xl text-stone-900">{children}</h3>
